@@ -1,0 +1,25 @@
+<h2>To do Application with Search</h2>
+<p>
+  <label>Add Items:
+    <input #TodoName />
+  </label>
+  <button (click)="add(TodoName.value); TodoName.value=''">
+    add
+  </button>
+</p>
+
+<h3 *ngIf = "todos.length">To Do List</h3>
+<ul *ngFor="let item of todos">
+  <li *ngIf = "item.name">
+    <div >
+      <span>{{item.name}}</span>
+      <button class="delete" title="delete item"
+      (click)="delete(item)">x</button>
+    </div>  
+  </li>
+</ul>
+
+<hr>
+
+<app-search [todos]="todos"></app-search>
+

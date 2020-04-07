@@ -1,0 +1,12 @@
+<div class="container">
+    <h3>Search Items </h3> 
+    <form [formGroup]="searchform" novalidate>
+       <div class="form-group">
+        <input type="search" class="form-control" placeholder="Please enter search term" [formControl]="searchField"> 
+        <!-- search List -->
+        <ul>
+          <li *ngFor="let search of searches">{{ search.name }}</li>
+        </ul>
+      </div>
+    </form>
+</div>
